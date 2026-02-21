@@ -36,10 +36,6 @@ graph LR
         UC9(Control de Asistencia)
     end
 
-    subgraph "Gym Manager System"
-       A((Administrador))  
-    end
-
     C --- UC1
     C --- UC2
     C --- UC3
@@ -51,6 +47,10 @@ graph LR
     A --- UC7
     A --- UC8
     A --- UC9
+
+    subgraph "Gym Manager System"
+       A((Administrador))  
+    end
 ```
 
 ---
