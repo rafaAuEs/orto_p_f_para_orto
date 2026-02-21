@@ -19,18 +19,12 @@ Este diagrama representa las interacciones de los diferentes actores (Cliente y 
 
 ```mermaid
 graph LR
-    %% Estilos de nodos
-    classDef actor fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
-    classDef system fill:#ffffff,stroke:#37474f,stroke-width:2px,stroke-dasharray: 5 5;
-    classDef usecase fill:#f1f8e9,stroke:#33691e,stroke-width:1px;
-
-    %% Posición Izquierda
-    subgraph "CLIENTE"
+    subgraph Col_Izquierda [ ]
+        style Col_Izquierda fill:none,stroke:none
         C((Cliente))
     end
 
-    %% Posición Centro
-    subgraph "GYM MANAGER SYSTEM"
+    subgraph GYM_MANAGER_SYSTEM [GYM MANAGER SYSTEM]
         UC1(Registrarse)
         UC2(Autenticación JWT)
         UC3(Consultar Clases)
@@ -43,12 +37,11 @@ graph LR
         UC9(Control de Asistencia)
     end
 
-    %% Posición Derecha
-    subgraph "ADMINISTRADOR"
+    subgraph Col_Derecha [ ]
+        style Col_Derecha fill:none,stroke:none
         A((Administrador))
     end
 
-    %% Conexiones Cliente
     C --- UC1
     C --- UC2
     C --- UC3
@@ -56,15 +49,10 @@ graph LR
     C --- UC5
     UC5 -. << incluye >> .-> UC6
     
-    %% Conexiones Administrador (Invertidas para forzar posición a la derecha)
     UC2 --- A
     UC7 --- A
     UC8 --- A
     UC9 --- A
-
-    %% Asignación de estilos
-    class C,A actor;
-    class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9 usecase;
 ```
 
 ---
