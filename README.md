@@ -19,12 +19,11 @@ Este diagrama representa las interacciones de los diferentes actores (Cliente y 
 
 ```mermaid
 graph LR
-    subgraph Col_Izquierda [ ]
-        style Col_Izquierda fill:none,stroke:none
+    subgraph "Actores"
         C((Cliente))
     end
 
-    subgraph GYM_MANAGER_SYSTEM [GYM MANAGER SYSTEM]
+    subgraph "Gym Manager System"
         UC1(Registrarse)
         UC2(Autenticación JWT)
         UC3(Consultar Clases)
@@ -37,11 +36,6 @@ graph LR
         UC9(Control de Asistencia)
     end
 
-    subgraph Col_Derecha [ ]
-        style Col_Derecha fill:none,stroke:none
-        A((Administrador))
-    end
-
     C --- UC1
     C --- UC2
     C --- UC3
@@ -49,10 +43,14 @@ graph LR
     C --- UC5
     UC5 -. << incluye >> .-> UC6
     
-    UC2 --- A
-    UC7 --- A
-    UC8 --- A
-    UC9 --- A
+    A --- UC2
+    A --- UC7
+    A --- UC8
+    A --- UC9
+
+    subgraph "Actores"
+       A((Administrador))  
+    end
 ```
 
 ---
