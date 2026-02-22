@@ -17,59 +17,9 @@ Gym Manager permite a los administradores gestionar el calendario de clases, con
 ## 3. Diagrama de Casos de Uso
 Este diagrama representa las interacciones de los diferentes actores (Cliente y Administrador) con las funcionalidades principales del sistema.
 
-```mermaid
-graph LR
-    subgraph "Cliente"
-        C((Cliente))
-    end
-
-    subgraph "Gym Manager System"
-        UC1(Registrarse)
-        UC2(Autenticación JWT)
-        UC3(Consultar Clases)
-        UC4(Reservar Clase)
-        UC5(Gestionar Mis Reservas)
-        UC6(Cancelar Reserva)
-        
-        UC7(Gestión CRUD de Clases)
-        UC8(Gestión de Usuarios)
-        UC9(Control de Asistencia)
-    end
-
-    C --- UC1
-    C --- UC2
-    C --- UC3
-    C --- UC4
-    C --- UC5
-    UC5 -. << incluye >> .-> UC6
-    
-
-
-```
-```mermaid
-graph LR
-    subgraph "Administrador"
-       A((Administrador))  
-    end
-
-    subgraph "Gym Manager System"
-        UC1(Registrarse)
-        UC2(Autenticación JWT)
-        UC3(Consultar Clases)
-        UC4(Reservar Clase)
-        UC5(Gestionar Mis Reservas)
-        UC6(Cancelar Reserva)
-        
-        UC7(Gestión CRUD de Clases)
-        UC8(Gestión de Usuarios)
-        UC9(Control de Asistencia)
-    end
-
-    A --- UC2
-    A --- UC7
-    A --- UC8
-    A --- UC9
-```
+<p align="center">
+  <img src="./CasosDeUso.png" alt="Diagrama de Casos de Uso" width="800">
+</p>
 
 ---
 
